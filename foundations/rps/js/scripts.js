@@ -1,5 +1,5 @@
 // console.log("Hello World")
-
+const playBtn = document.getElementById('play-btn')
 
 const getComputerChoice = () => {
 
@@ -70,4 +70,8 @@ function playGame () {
     }
 }
 
-playGame()
+playBtn.addEventListener('click', () => {
+    playGame()
+})
+
+

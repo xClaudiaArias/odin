@@ -10,15 +10,12 @@ const getComputerChoice = () => {
         case 0:
             console.log('rock')
             return 'rock';
-            break;
         case 1:
             console.log('paper')
             return 'paper';
-            break;
         case 2:
             console.log('scissors')
             return 'scissors';
-            break;
     }
 }
 
@@ -32,9 +29,6 @@ function playGame () {
     let computerScore = 0;
 
     const playRound = (humanChoice, computerChoice) => {
-        humanChoice = getHumanChoice()
-        computerChoice = getComputerChoice()
-
         if ((humanChoice === 'paper' && computerChoice === 'rock') || (humanChoice === 'rock' && computerChoice === 'scissors') || (humanChoice === 'scissors' && computerChoice === 'paper') ) {
             console.log(`You Win! ${humanChoice} beats ${computerChoice}`)
             return  humanScore += 1
@@ -50,10 +44,6 @@ function playGame () {
     const humanSelection = getHumanChoice()
     const computerSelection = getComputerChoice()
 
-    playRound(humanSelection, computerSelection)
-    playRound(humanSelection, computerSelection)
-    playRound(humanSelection, computerSelection)
-    playRound(humanSelection, computerSelection)
     playRound(humanSelection, computerSelection)
 
 

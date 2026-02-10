@@ -1,8 +1,6 @@
 // console.log("Hello World")
 const playBtn = document.getElementById('play-btn')
-const rockBtn = document.getElementById('rock');
-const paperBtn = document.getElementById('paper');
-const scissors = document.getElementById('scissors');
+const choiceBtn = document.querySelectorAll(".choice-btn");
 
 const getComputerChoice = () => {
 
@@ -24,6 +22,7 @@ const getComputerChoice = () => {
 
 const getHumanChoice = () => {
     let humanChoice = prompt("rock, paper or scissors?")
+    console.log('humanChoice: ', humanChoice)
     return humanChoice.toLowerCase()
 }
 
@@ -32,6 +31,7 @@ function playGame () {
     let computerScore = 0;
 
     const playRound = (humanChoice, computerChoice) => {
+
         if ((humanChoice === 'paper' && computerChoice === 'rock') || (humanChoice === 'rock' && computerChoice === 'scissors') || (humanChoice === 'scissors' && computerChoice === 'paper') ) {
             console.log(`You Win! ${humanChoice} beats ${computerChoice}`)
             return  humanScore += 1

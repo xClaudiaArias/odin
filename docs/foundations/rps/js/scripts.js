@@ -1,5 +1,8 @@
 // console.log("Hello World")
 const playBtn = document.getElementById('play-btn')
+const rockBtn = document.getElementById('rock');
+const paperBtn = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
 
 const getComputerChoice = () => {
 

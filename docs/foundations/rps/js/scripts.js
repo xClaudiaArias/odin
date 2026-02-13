@@ -3,7 +3,10 @@ const computer_choice = document.getElementById('computer-choice')
 const player_score = document.getElementById('player-score')
 const computer_score = document.getElementById('computer-score')
 const choiceBtn = document.querySelectorAll(".choice-btn");
-const displa = document.getElementById(".display");
+const display = document.getElementById("display");
+const modal = document.getElementById("modal")
+const modal_container = document.getElementById("modal-container")
+const play_again_btn = document.getElementById("play-again-btn")
 
 const getComputerChoice = () => {
 
@@ -22,6 +25,7 @@ const getComputerChoice = () => {
             return 'scissors';
     }
 }
+
 
 function playGame () {
     let humanScore = 0;
@@ -50,6 +54,8 @@ function playGame () {
         }
     }
 
+    modal_container.style.display = "none"
+    play_again_btn.style.display = "none"
     choiceBtn.forEach(btn => btn.addEventListener('click', () => {
             const computerSelection = getComputerChoice()
             const humanSelection = btn.innerHTML.toLowerCase();
@@ -57,8 +63,38 @@ function playGame () {
             playRound(humanSelection, computerSelection)
             player_score.innerHTML = "Your score: " +  humanScore
             computer_score.innerHTML = "Computer score: " +  computerScore
+            
+            if (humanScore === 5) {
+                choiceBtn.forEach(btn => btn.style.display = "none")
+                display.style.display = "none"
+                computer_choice.style.display = "none"
+                player_choice.style.display = "none"
+                modal_container.style.display = "block"
+                modal.innerHTML = "YOU WON!!!"
+                humanScore = 0
+                computerScore = 0
+
+                play_again_btn.style.display = "block"
+            } else if (computerScore === 5) {
+                choiceBtn.forEach(btn => btn.style.display = "none")
+                display.style.display = "none"
+                computer_choice.style.display = "none"
+                player_choice.style.display = "none"
+                modal_container.style.display = "block"
+                modal.innerHTML = "Computer WON!!!"
+                humanScore = 0
+                computerScore = 0
+
+                play_again_btn.style.display = "block"
+            } 
+
         }
     ))
+
+    // modal_container.style.display = "none"
+
+
+
     
 
     // console.log(`SCORE ---- HUMAN: ${humanScore} COMPUTER: ${computerScore}`)

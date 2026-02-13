@@ -1,5 +1,7 @@
 const player_choice = document.getElementById('player-choice')
 const computer_choice = document.getElementById('computer-choice')
+const player_score = document.getElementById('player-score')
+const computer_score = document.getElementById('computer-score')
 const choiceBtn = document.querySelectorAll(".choice-btn");
 const displa = document.getElementById(".display");
 
@@ -53,6 +55,8 @@ function playGame () {
             const humanSelection = btn.innerHTML.toLowerCase();
             console.log(humanSelection, " :humanSelection")
             playRound(humanSelection, computerSelection)
+            player_score.innerHTML = "Your score: " +  humanScore
+            computer_score.innerHTML = "Computer score: " +  computerScore
         }
     ))
     

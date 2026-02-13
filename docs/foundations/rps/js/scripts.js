@@ -7,6 +7,7 @@ const display = document.getElementById("display");
 const modal = document.getElementById("modal")
 const modal_container = document.getElementById("modal-container")
 const play_again_btn = document.getElementById("play-again-btn")
+const btn_images = document.querySelectorAll('.choice-btn-images')
 
 const getComputerChoice = () => {
 
@@ -74,6 +75,8 @@ function playGame () {
                 humanScore = 0
                 computerScore = 0
 
+                btn_images.forEach(btn => btn.style.display = "none")
+
                 play_again_btn.style.display = "block"
             } else if (computerScore === 5) {
                 choiceBtn.forEach(btn => btn.style.display = "none")
@@ -85,6 +88,8 @@ function playGame () {
                 humanScore = 0
                 computerScore = 0
 
+                btn_images.forEach(btn => btn.style.display = "none")
+                
                 play_again_btn.style.display = "block"
             } 
 

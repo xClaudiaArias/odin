@@ -10,10 +10,50 @@
         }
         .choice-btn {
             font-size: 40px;
+            background-color: whitesmoke;
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
         }
 
         .choice-btn:hover {
             cursor: pointer;
+            background-color: lavender;
+        }
+
+        .btn-group-images {
+            width: 500px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .btn-group-images .choice-btn-images {
+            font-size: 80px;
+
+        }
+
+        #container-top {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+
+        #container-top div {
+            display: flex;
+            gap: 20px;
+        }  
+        
+        #display {
+            font-size: 20px;
+            width: 500px;
+            height: 100px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
         }
     </style>
 </head>
@@ -26,35 +66,36 @@
     <p> <small><strong>The rules are simple &#8594; </strong> Rock crushes Scissors, Scissors cuts Paper, and Paper covers Rock-- with players typically saying "Rock, Paper, Scissors, Shoot!" to time their throws, aiming to pick the winning shape to beat their opponent's.</small> [<a href="https://www.playworks.org/game-library/ro-sham-bo-or-rock-paper-scissors/">&#9830</a>]</p>
 
     <hr>
-    
-    
-    <h2>HAVE FUN!!!</h2>
-    <button id="play-again-btn" type="button" onClick="window.location.reload()">PLAY AGAIN</button>
 
-    <br>
-
-    <div id="modal-container">
-        <div id="modal">
-            hello
+    <div id="container-top"> 
+        <div>
+            <span id="player-score"></span>
+            <span id="computer-score"></span>
+        </div>
+        <div>
+            <span id="player-choice"></span>
+            <span id="computer-choice"></span>
         </div>
     </div>
 
-    <div>
-        <p id="player-score"></p>
-        <p id="computer-score"></p>
-    </div>
-
-    <div>
-        <p id="player-choice"></p>
-        <p id="computer-choice"></p>
-    </div>
     <div id="display"></div>
     <div class="btn-group">
+        <div class="btn-group-images">
+            <div class="choice-btn-images">🪨</div>
+            <div class="choice-btn-images">📄</div>
+            <div class="choice-btn-images">✂️</div>
+        </div>
         <button id="rock" class="choice-btn" type="button">ROCK</button>
         <button id="paper" class="choice-btn" type="button">PAPER</button>
         <button id="scissors" class="choice-btn" type="button">SCISSORS</button>
     </div>
 
+    <div id="modal-container">
+        <div id="modal">
+            
+        </div>
+        <button id="play-again-btn" type="button" onClick="window.location.reload()">PLAY AGAIN</button>
+    </div>
 
     <hr>
 

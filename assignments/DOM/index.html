@@ -38,6 +38,7 @@
       btn.addEventListener('click', function(e) {
         e.preventDefault()
         let currentValue = input.value
+        if (currentValue.trim() === "") return; // making sure its not empty
         console.log(currentValue)
         input.value = ""
 
